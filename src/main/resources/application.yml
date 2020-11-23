@@ -1,0 +1,107 @@
+filesystem:
+  dataDirectory: data
+#  fileSystemInterface : fileSystemAWSS3
+  fileSystemInterface : fileSystemLocalhost
+
+fileSystemAWSS3:
+  accessKey : xxx
+  secretKey : xxx
+  bucketName : dbconnector-data
+
+server:
+  port: 443
+  ssl:
+    enabled: true
+    key-alias: pstestsite
+    key-store: properties/keystore/pstestsite.p12
+    key-store-password: pstestsite
+    key-store-type: PKCS12
+  servlet:
+    session:
+      cookie:
+         max-age: -1
+      timeout: -1
+#server:
+#  port: 80
+#  forward-headers-strategy: native
+
+logging:
+       level:
+#              org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: TRACE
+              org.springframework: INFO
+              com.mchange: INFO
+              com.cisco: INFO
+
+spring:
+  cache:
+    type: NONE
+
+
+# CI client
+oauth:
+  client:
+    clientName: OauthClient
+    clientId: C40534fb8cf2fb8c1af27f5cc8b20a3eef14d9eb9ef5d3914caa7e4c4efc8af1f
+    clientSecret: f5b6541e6ad0a753ad714e1980425471492ab81fffe22b76c70da77b5ff7493c
+    serviceScopes: Identity:SCIM
+    identityServiceUrl: https://identity.webex.com
+    identityBrokerUrl: https://idbroker.webex.com
+    authorizationUri: /idb/oauth2/v1/authorize
+    userProfileUri: /identity/scim/v1/Users/me
+    accessTokenUri: /idb/oauth2/v1/access_token
+    validateTokenUri: /idb/oauth2/v1/tokeninfo
+    revokeTokenUri: /idb/oauth2/v1/revoke
+    logoutUri: /idb/oauth2/v1/logout
+#    redirectUrl: /login/oauth2/code/dbconnector
+    redirectUrl: https://localhost/connector
+#    redirectUrl: https://www.tmedemo.com/login/oauth2/code/dbconnector
+#    redirectUrl: http://localhost/login/oauth2/code/dbconnector
+#    redirectUrl: https://localhost/login/oauth2/code/dbconnector
+#    redirectUrl: https://dbconnector.pstestsite.com/login/oauth2/code/dbconnector
+    
+#oauth:
+#  client:
+#    clientName: OauthClient
+#    clientId: C34b1b99a8003129cbad9e15fa473c1a07a7d78f07ea6b40581972d14feccba4a
+#    clientSecret: 90a80daa2caad78b8c425ddbec4a236cdf1e4c47630cba5a0d6609195c1b8140
+#    serviceScopes: Identity:SCIM
+#    identityServiceUrl: https://identity.webex.com
+#    identityBrokerUrl: https://idbroker.webex.com
+#    authorizationUri: /idb/oauth2/v1/authorize
+#    userProfileUri: /identity/scim/v1/Users/me
+#    accessTokenUri: /idb/oauth2/v1/access_token
+#    validateTokenUri: /idb/oauth2/v1/tokeninfo
+#    revokeTokenUri: /idb/oauth2/v1/revoke
+#    logoutUri: /idb/oauth2/v1/logout
+#    redirectUrl: https://localhost/login/oauth2/code/dbconnector
+#oauth:
+#  client:
+#    clientName: OauthClient
+#    clientId: Cbcebc934a52595cd81df3f6682a472f31ca51ef309f821de6e8ce4a1bc195ee8
+#    clientSecret: fd2c8f00a43e387a42e015a81da51522caf310eb2e8b9ca7cce7abe3ae0ca99b
+#    serviceScopes: Identity:SCIM
+#    identityServiceUrl: https://identity.webex.com
+#    identityBrokerUrl: https://idbroker.webex.com
+#    authorizationUri: /idb/oauth2/v1/authorize
+#    userProfileUri: /identity/scim/v1/Users/me
+#    accessTokenUri: /idb/oauth2/v1/access_token
+#    validateTokenUri: /idb/oauth2/v1/tokeninfo
+#    revokeTokenUri: /idb/oauth2/v1/revoke
+#    logoutUri: /idb/oauth2/v1/logout
+#    redirectUrl: http://localhost/login/oauth2/code/dbconnector
+
+#oauth:
+#  client:
+#    clientName: OauthClient
+#    clientId: C90446a72ad54f650788681a5d8b573f3590716ae4117222fb85b32c7ff552bfe
+#    clientSecret: 3ce49c740889eee32346c86003aef94cbc6c754bf941c7948b8a4093649ce467
+#    serviceScopes: Identity:SCIM
+#    identityServiceUrl: https://identity.webex.com
+#    identityBrokerUrl: https://idbroker.webex.com
+#    authorizationUri: /idb/oauth2/v1/authorize
+#    userProfileUri: /identity/scim/v1/Users/me
+#    accessTokenUri: /idb/oauth2/v1/access_token
+#    validateTokenUri: /idb/oauth2/v1/tokeninfo
+#    revokeTokenUri: /idb/oauth2/v1/revoke
+#    logoutUri: /idb/oauth2/v1/logout
+#    redirectUrl: http://www.pstestsite.com:8012/login/oauth2/code/dbconnector
